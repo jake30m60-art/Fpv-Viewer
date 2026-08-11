@@ -45,5 +45,5 @@ dependencies {
     // WICHTIG: Falls Android Studio diese Zeile nicht findet/Gradle-Sync fehlschlägt,
     // auf https://github.com/jiangdongguo/AndroidUSBCamera nachsehen, welche
     // aktuelle Version/Koordinate dort im README empfohlen wird, und diese Zeile ersetzen.
-    implementation 'com.github.jiangdongguo:AndroidUSBCamera:3.3.3'
+    implementation 'com.github.jiangdongguo:AndroidUSBCamera:3.2.6'
 }
