@@ -1,10 +1,16 @@
 package com.herbert.fpvviewer
 
 import android.Manifest
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.PermissionChecker
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 
 /**
  * FpvViewer – zeigt das Live-Bild einer beliebigen UVC-fähigen Capture Card
@@ -20,8 +26,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableFullscreen()
         setContentView(R.layout.activity_main)
         requestCameraPermissionAndShow()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        // Nach Zurückkehren aus dem Hintergrund (z.B. Berechtigungsdialog) erneut verstecken,
+        // da Android die System-Leisten sonst wieder einblendet.
+        if (hasFocus) {
+            enableFullscreen()
+        }
+    }
+
+    private fun enableFullscreen() {
+        // Bildschirm bleibt an, während das Live-Bild läuft
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        val controller = WindowInsetsControllerCompat(window, window.decorView)
+        controller.hide(WindowInsetsCompat.Type.systemBars())
+        controller.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     }
 
     private fun requestCameraPermissionAndShow() {
