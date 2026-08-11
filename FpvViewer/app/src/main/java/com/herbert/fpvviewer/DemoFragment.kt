@@ -8,6 +8,8 @@ import com.herbert.fpvviewer.databinding.FragmentDemoBinding
 import com.jiangdg.ausbc.base.CameraFragment
 import com.jiangdg.ausbc.widget.AspectRatioTextureView
 import com.jiangdg.ausbc.widget.IAspectRatio
+import com.jiangdg.ausbc.MultiCameraClient
+import com.jiangdg.ausbc.callback.ICameraStateCallBack
 
 /**
  * Zeigt das Live-Bild der angeschlossenen UVC Capture Card.
