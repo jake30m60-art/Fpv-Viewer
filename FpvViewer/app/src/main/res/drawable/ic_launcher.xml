@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Hintergrund -->
+    <path
+        android:pathData="M0,0 H108 V108 H0 Z"
+        android:fillColor="#101826" />
+
+    <!-- Kopfband links -->
+    <path
+        android:pathData="M24,58 L6,58"
+        android:strokeColor="#FF6B35"
+        android:strokeWidth="6"
+        android:strokeLineCap="round" />
+
+    <!-- Kopfband rechts -->
+    <path
+        android:pathData="M84,58 L102,58"
+        android:strokeColor="#FF6B35"
+        android:strokeWidth="6"
+        android:strokeLineCap="round" />
+
+    <!-- Brillenkörper (Pille) -->
+    <path
+        android:pathData="M38,44 L70,44 A14,14 0 0 1 84,58 A14,14 0 0 1 70,72 L38,72 A14,14 0 0 1 24,58 A14,14 0 0 1 38,44 Z"
+        android:fillColor="#FF6B35" />
+
+    <!-- Linkes Glas (Aussparung) -->
+    <path
+        android:pathData="M31,58 A9,9 0 1 0 49,58 A9,9 0 1 0 31,58 Z"
+        android:fillColor="#101826" />
+
+    <!-- Rechtes Glas (Aussparung) -->
+    <path
+        android:pathData="M59,58 A9,9 0 1 0 77,58 A9,9 0 1 0 59,58 Z"
+        android:fillColor="#101826" />
+
+    <!-- Glas-Highlights -->
+    <path
+        android:pathData="M35,54 A3,3 0 1 0 41,54 A3,3 0 1 0 35,54 Z"
+        android:fillColor="#3A4A66" />
+    <path
+        android:pathData="M63,54 A3,3 0 1 0 69,54 A3,3 0 1 0 63,54 Z"
+        android:fillColor="#3A4A66" />
+
+    <!-- Drohne: Arme -->
+    <path
+        android:pathData="M82,24 L70,12 M82,24 L94,12 M82,24 L70,36 M82,24 L94,36"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+
+    <!-- Drohne: Propeller -->
+    <path
+        android:pathData="M70,12 A3.4,3.4 0 1 0 76.8,12 A3.4,3.4 0 1 0 70,12 Z"
+        android:fillColor="#FFFFFF" />
+    <path
+        android:pathData="M87.2,12 A3.4,3.4 0 1 0 94,12 A3.4,3.4 0 1 0 87.2,12 Z"
+        android:fillColor="#FFFFFF" />
+    <path
+        android:pathData="M70,36 A3.4,3.4 0 1 0 76.8,36 A3.4,3.4 0 1 0 70,36 Z"
+        android:fillColor="#FFFFFF" />
+    <path
+        android:pathData="M87.2,36 A3.4,3.4 0 1 0 94,36 A3.4,3.4 0 1 0 87.2,36 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Drohne: Körper -->
+    <path
+        android:pathData="M78,24 A4,4 0 1 0 86,24 A4,4 0 1 0 78,24 Z"
+        android:fillColor="#FF6B35" />
+
+</vector>
