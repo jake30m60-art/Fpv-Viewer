@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <FrameLayout
+        android:id="@+id/cameraViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Overlay: wird angezeigt, solange kein Bild von der Capture Card ankommt -->
+    <LinearLayout
+        android:id="@+id/waitingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#000000">
+
+        <TextView
+            android:id="@+id/waitingIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥽"
+            android:textSize="96sp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/waitingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Warte auf USB-Gerät..."
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:letterSpacing="0.05" />
+
+    </LinearLayout>
+
+    <!-- Aufnahme-Anzeige oben links: roter Punkt + verstrichene Zeit, nur während Videoaufnahme sichtbar -->
+    <LinearLayout
+        android:id="@+id/recIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="14dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="@drawable/toolbox_panel_bg"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/recDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔴"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/recTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REC 00:00"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Kleines, halbtransparentes Symbol unten rechts. Antippen öffnet die Toolbox. -->
+    <FrameLayout
+        android:id="@+id/toolboxButton"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="14dp"
+        android:alpha="0.3"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="🧰"
+            android:textSize="26sp" />
+
+    </FrameLayout>
+
+    <!-- Ausklappbare Toolbox: Foto, Video, Auflösung. Standardmäßig unsichtbar. -->
+    <LinearLayout
+        android:id="@+id/toolboxPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="14dp"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="@drawable/toolbox_panel_bg"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/captureImageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📷  Foto aufnehmen"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/captureVideoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎥  Video aufnehmen"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/resolutionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚙️  Auflösung wählen"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/closeToolboxBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✕  Schließen"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</FrameLayout>
