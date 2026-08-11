@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.herbert.fpvviewer.databinding.FragmentDemoBinding
-import com.jiangdg.ausbc.CameraFragment
-import com.jiangdg.ausbc.callback.IAspectRatio
+import com.jiangdg.ausbc.base.CameraFragment
 import com.jiangdg.ausbc.widget.AspectRatioTextureView
+import com.jiangdg.ausbc.widget.IAspectRatio
 
 /**
  * Zeigt das Live-Bild der angeschlossenen UVC Capture Card.
