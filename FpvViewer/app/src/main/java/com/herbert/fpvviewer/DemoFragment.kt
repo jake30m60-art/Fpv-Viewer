@@ -34,4 +34,10 @@ class DemoFragment : CameraFragment() {
     }
 
     override fun getGravity(): Int = Gravity.TOP
+    override fun onCameraState(
+        self: MultiCameraClient.ICamera,
+        code: ICameraStateCallBack.State,
+        msg: String?
+    ) {
+    }
 }
